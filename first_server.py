@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 import requests
 from requests.auth import HTTPBasicAuth
+import uvicorn
 import re
 import unicodedata
 from urllib.parse import unquote 
@@ -268,4 +269,4 @@ async def get_product_id_by_name_and_option(product_name: str, option: str) -> i
 
 # Run the server
 if __name__ == "__main__":
-    mcp.run(transport='streamable-http')
+    uvicorn.run(mcp.app, host="0.0.0.0", port=port)
