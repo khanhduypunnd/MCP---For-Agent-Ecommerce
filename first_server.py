@@ -16,7 +16,8 @@ CONSUMER_KEY = os.getenv("CONSUMER_KEY")
 CONSUMER_SECRET = os.getenv("CONSUMER_SECRET")
 
 # Create an MCP server
-mcp = FastMCP("Muse")
+port = int(os.environ.get("PORT", 8001)) 
+mcp = FastMCP("Muse", port=port)
 
 # Tool implementation
 def slugify(name: str) -> str:
@@ -268,4 +269,4 @@ async def get_product_id_by_name_and_option(product_name: str, option: str) -> i
 
 # Run the server
 if __name__ == "__main__":
-    mcp.run(transport='streamable-http', host="0.0.0.0")
+    mcp.run(transport="streamable-http")
