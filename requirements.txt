@@ -5,3 +5,4 @@ beautifulsoup4
 langchain_mcp_adapters
 langgraph
 langchain-groq
+urllib3
