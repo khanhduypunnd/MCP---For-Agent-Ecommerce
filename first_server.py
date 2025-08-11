@@ -16,7 +16,7 @@ CONSUMER_KEY = os.getenv("CONSUMER_KEY")
 CONSUMER_SECRET = os.getenv("CONSUMER_SECRET")
 
 # Create an MCP server
-port = int(os.environ.get("PORT", 8001)) 
+port = int(os.environ.get("PORT", 8000))  
 mcp = FastMCP("Muse", port=port)
 
 # Tool implementation
@@ -265,8 +265,8 @@ async def get_product_id_by_name_and_option(product_name: str, option: str) -> i
                 if attr_val.strip().lower() == option.strip().lower():
                     return v.get("id", -1)
 
-    return -1  # Không tìm thấy
+    return -1  
 
-# Run the server
-if __name__ == "__main__":
-    mcp.run(transport="streamable-http")
+# # Run the server
+# if __name__ == "__main__":
+#     mcp.run(transport="streamable-http")
