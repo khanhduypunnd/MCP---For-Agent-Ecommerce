@@ -1,0 +1,7 @@
+fastmcp
+python-dotenv
+requests
+beautifulsoup4
+langchain_mcp_adapters
+langgraph
+langchain-groq
