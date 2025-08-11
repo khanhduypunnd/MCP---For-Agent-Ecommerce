@@ -269,4 +269,6 @@ async def get_product_id_by_name_and_option(product_name: str, option: str) -> i
 
 # Run the server
 if __name__ == "__main__":
-    uvicorn.run(mcp.app, host="0.0.0.0", port=port)
+    app = mcp.asgi_app(transport="streamable-http")
+   
+    uvicorn.run(app, host="0.0.0.0", port=port)
